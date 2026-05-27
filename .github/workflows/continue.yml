@@ -38,7 +38,7 @@ jobs:
         id: testuojam-griuvenas
         run: npm run test
       - name: Upload test report
-        if: failure() &&  steps.testuojam-griuvenas.outcome == 'failure'
+        # if: failure() &&  steps.testuojam-griuvenas.outcome == 'failure'
         uses: actions/upload-artifact@v6
         with:
           name: test-report
