@@ -17,4 +17,4 @@ jobs:
       - name: Install Dependencies
         run: npm ci
       - name: Build project
-        run: npm run buil
+        run: npm run build
