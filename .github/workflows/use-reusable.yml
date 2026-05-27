@@ -16,7 +16,7 @@ jobs:
           path: ~/.npm
           key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
       - name: Install dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
+        # if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci
       - name: Lint code
         run: npm run lint
@@ -38,7 +38,7 @@ jobs:
         id: testuojam-griuvenas
         run: npm run test
       - name: Upload test report
-        if: failure() &&  steps.testuojam-griuvenas.outcome == 'failure'
+        # if: failure() &&  steps.testuojam-griuvenas.outcome == 'failure'
         uses: actions/upload-artifact@v6
         with:
           name: test-report
